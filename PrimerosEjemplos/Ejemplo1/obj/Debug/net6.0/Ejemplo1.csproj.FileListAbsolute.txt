@@ -1,0 +1,15 @@
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\PrimerosEjemplos\Ejemplo1\bin\Debug\net6.0\Ejemplo1.exe
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\PrimerosEjemplos\Ejemplo1\bin\Debug\net6.0\Ejemplo1.deps.json
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\PrimerosEjemplos\Ejemplo1\bin\Debug\net6.0\Ejemplo1.runtimeconfig.json
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\PrimerosEjemplos\Ejemplo1\bin\Debug\net6.0\Ejemplo1.dll
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\PrimerosEjemplos\Ejemplo1\bin\Debug\net6.0\Ejemplo1.pdb
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\PrimerosEjemplos\Ejemplo1\obj\Debug\net6.0\Ejemplo1.csproj.AssemblyReference.cache
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\PrimerosEjemplos\Ejemplo1\obj\Debug\net6.0\Ejemplo1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\PrimerosEjemplos\Ejemplo1\obj\Debug\net6.0\Ejemplo1.AssemblyInfoInputs.cache
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\PrimerosEjemplos\Ejemplo1\obj\Debug\net6.0\Ejemplo1.AssemblyInfo.cs
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\PrimerosEjemplos\Ejemplo1\obj\Debug\net6.0\Ejemplo1.csproj.CoreCompileInputs.cache
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\PrimerosEjemplos\Ejemplo1\obj\Debug\net6.0\Ejemplo1.dll
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\PrimerosEjemplos\Ejemplo1\obj\Debug\net6.0\refint\Ejemplo1.dll
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\PrimerosEjemplos\Ejemplo1\obj\Debug\net6.0\Ejemplo1.pdb
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\PrimerosEjemplos\Ejemplo1\obj\Debug\net6.0\Ejemplo1.genruntimeconfig.cache
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\PrimerosEjemplos\Ejemplo1\obj\Debug\net6.0\ref\Ejemplo1.dll
