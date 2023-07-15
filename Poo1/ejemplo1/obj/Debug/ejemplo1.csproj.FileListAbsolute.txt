@@ -1,0 +1,8 @@
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\Poo1\ejemplo1\bin\Debug\ejemplo1.exe.config
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\Poo1\ejemplo1\bin\Debug\ejemplo1.exe
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\Poo1\ejemplo1\bin\Debug\ejemplo1.pdb
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\Poo1\ejemplo1\obj\Debug\ejemplo1.csproj.AssemblyReference.cache
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\Poo1\ejemplo1\obj\Debug\ejemplo1.csproj.SuggestedBindingRedirects.cache
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\Poo1\ejemplo1\obj\Debug\ejemplo1.csproj.CoreCompileInputs.cache
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\Poo1\ejemplo1\obj\Debug\ejemplo1.exe
+C:\Users\diegu\OneDrive\Documentos\cursoC#nivel2\Poo1\ejemplo1\obj\Debug\ejemplo1.pdb
