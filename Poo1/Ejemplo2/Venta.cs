@@ -8,5 +8,9 @@ namespace Ejemplo2
 {
     internal class Venta
     {
+        public int Articulo { get; set; }
+        public int Cantidad { get; set; }
+
+        public int CodCliente { get; set; }
     }
 }

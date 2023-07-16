@@ -24,5 +24,14 @@ namespace ejemplo1
         {
             return edad;
         }
+        public Persona(string nombre)
+        {
+            this.nombre = nombre;
+        }
+        //métodos (comportamientos del objeto)
+        public string saludar()
+        {
+            return "Hola soy ...." + nombre;
+        }
     }
 }

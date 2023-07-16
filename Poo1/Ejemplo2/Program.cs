@@ -35,6 +35,28 @@ namespace Ejemplo2
                 Console.WriteLine("Código de marca: ");
                 articulos[i].CodMarca=int.Parse(Console.ReadLine());
             }
+            //cargado el vector completo
+
+            Venta venta= new Venta();
+            Console.WriteLine("Ingrese la venta: ");
+            Console.WriteLine("Código cliente");
+            venta.CodCliente=int.Parse(Console.ReadLine());
+            
+
+            while (venta.CodCliente != 0)
+            {
+                Console.WriteLine("Código Artículo");
+                venta.Articulo = int.Parse(Console.ReadLine());
+                Console.WriteLine("Cantidad");
+                venta.Cantidad = int.Parse(Console.ReadLine());
+                //trabajamos
+
+
+                //pidocliente neuvamente
+                Console.WriteLine("Ingrese la venta: ");
+                Console.WriteLine("Código cliente");
+                venta.CodCliente = int.Parse(Console.ReadLine());
+            }
         }
     }
 }

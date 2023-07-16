@@ -18,17 +18,23 @@ namespace ejemplo1
             //float[] sueldos = new float[10];
             //string[] nombres = new string[10];
 
-            Persona p1= new Persona();
-         
+            //Persona p1= new Persona("Diego");
 
-            p1.setEdad(30);
-            Console.WriteLine("La edad de la persona es: " + p1.getEdad());
+            
+            //Console.WriteLine(p1.saludar());
+            //p1.setEdad(30);
+            //Console.WriteLine("La edad de la persona es: " + p1.getEdad());
 
-            Botella b1= new Botella();
+            Botella b1 = new Botella("Rojo", "Plastico");
+            //b1.Capacidad = 200;
+            Console.WriteLine("La capacidad es " + b1.Capacidad);
+            Console.WriteLine("la cantidad actual es: "+b1.CantidadActual);
 
-            b1.Capacidad = 200;
+            b1.recargar();
+            Console.WriteLine("Luego de recargar la cantidad actual es: " + b1.CantidadActual);
 
-            int algo = b1.Capacidad;
+
+            Console.WriteLine("El color es " + b1.Color);
 
 
 
