@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Herencia3
 {
-    internal class Aguila : AnimalSalvaje, Flyable
+    internal interface Flyable
     {
-        public string Volar()
-        {
-            return "vuela como un aguila...";
-        }
+        string Volar();
     }
 }
