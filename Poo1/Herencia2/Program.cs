@@ -40,7 +40,7 @@ namespace Herencia2
             //Console.WriteLine("La cantidad de camionetas es: " + listaCamionetas.Count);
             foreach (Camioneta item  in listaCamionetas)
             {
-                Console.WriteLine("Color: " + item.Color);
+                Console.WriteLine("Color: " + item.Color); 
             }
 
 
