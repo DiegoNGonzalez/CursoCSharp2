@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Herencia2
 {
-    internal class Auto:Vehiculo    
+    internal class Chasis
     {
     }
 }
