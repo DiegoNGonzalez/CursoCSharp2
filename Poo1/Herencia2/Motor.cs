@@ -8,5 +8,7 @@ namespace Herencia2
 {
     internal class Motor
     {
+        public string Marca { get; set; }
+        ///....
     }
 }

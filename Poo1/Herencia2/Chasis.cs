@@ -8,5 +8,6 @@ namespace Herencia2
 {
     internal class Chasis
     {
+        public string Material { get; set; }
     }
 }
