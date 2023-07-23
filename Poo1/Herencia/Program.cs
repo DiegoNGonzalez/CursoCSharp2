@@ -11,7 +11,7 @@ namespace Herencia
         static void Main(string[] args)
         {
             //Persona > Lider > Developer >Tester
-            Persona p1 = new Persona();
+            //Persona p1 = new Persona();
             Developer d1= new Developer();
             d1.Nombre = "asdasd";
             Lider l1= new Lider();

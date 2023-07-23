@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Herencia
 {
-    internal class Lider :Persona
+    internal class Lider
     {
+        public static string Algo()
+        {
+            return "hola";
+        }
     }
 }
