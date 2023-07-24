@@ -51,14 +51,16 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(115, 63);
+            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNombre.Location = new System.Drawing.Point(157, 63);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(200, 20);
+            this.txtNombre.Size = new System.Drawing.Size(213, 20);
             this.txtNombre.TabIndex = 0;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(64, 416);
+            this.btnAgregar.Location = new System.Drawing.Point(64, 414);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 1;
@@ -68,18 +70,22 @@
             // 
             // elementos
             // 
+            this.elementos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.elementos.HideSelection = false;
-            this.elementos.Location = new System.Drawing.Point(64, 311);
+            this.elementos.Location = new System.Drawing.Point(113, 311);
             this.elementos.Name = "elementos";
-            this.elementos.Size = new System.Drawing.Size(228, 97);
+            this.elementos.Size = new System.Drawing.Size(241, 97);
             this.elementos.TabIndex = 2;
             this.elementos.UseCompatibleStateImageBehavior = false;
             this.elementos.View = System.Windows.Forms.View.List;
             // 
             // labelNombre
             // 
+            this.labelNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Location = new System.Drawing.Point(47, 66);
+            this.labelNombre.Location = new System.Drawing.Point(92, 63);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(50, 13);
             this.labelNombre.TabIndex = 3;
@@ -87,24 +93,31 @@
             // 
             // labelFecha
             // 
+            this.labelFecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFecha.AutoSize = true;
-            this.labelFecha.Location = new System.Drawing.Point(1, 95);
+            this.labelFecha.Location = new System.Drawing.Point(43, 95);
+            this.labelFecha.MaximumSize = new System.Drawing.Size(200, 20);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(108, 13);
             this.labelFecha.TabIndex = 4;
             this.labelFecha.Text = "Fecha de Nacimiento";
+            this.labelFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dtpFechaDeNacimiento
             // 
-            this.dtpFechaDeNacimiento.Location = new System.Drawing.Point(115, 89);
+            this.dtpFechaDeNacimiento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpFechaDeNacimiento.Location = new System.Drawing.Point(157, 95);
             this.dtpFechaDeNacimiento.Name = "dtpFechaDeNacimiento";
-            this.dtpFechaDeNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaDeNacimiento.Size = new System.Drawing.Size(213, 20);
             this.dtpFechaDeNacimiento.TabIndex = 6;
             // 
             // chbChocolate
             // 
+            this.chbChocolate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.chbChocolate.AutoSize = true;
-            this.chbChocolate.Location = new System.Drawing.Point(115, 115);
+            this.chbChocolate.Location = new System.Drawing.Point(182, 129);
             this.chbChocolate.Name = "chbChocolate";
             this.chbChocolate.Size = new System.Drawing.Size(135, 17);
             this.chbChocolate.TabIndex = 7;
@@ -115,7 +128,7 @@
             // 
             this.lblPerfil.AutoSize = true;
             this.lblPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPerfil.Location = new System.Drawing.Point(44, 9);
+            this.lblPerfil.Location = new System.Drawing.Point(151, 0);
             this.lblPerfil.Name = "lblPerfil";
             this.lblPerfil.Size = new System.Drawing.Size(184, 31);
             this.lblPerfil.TabIndex = 8;
@@ -155,28 +168,33 @@
             // 
             // gbxTipo
             // 
+            this.gbxTipo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gbxTipo.Controls.Add(this.rbtnSquibs);
             this.gbxTipo.Controls.Add(this.rbtnWizard);
             this.gbxTipo.Controls.Add(this.rbtnMuggle);
-            this.gbxTipo.Location = new System.Drawing.Point(50, 152);
+            this.gbxTipo.Location = new System.Drawing.Point(70, 152);
             this.gbxTipo.Name = "gbxTipo";
-            this.gbxTipo.Size = new System.Drawing.Size(395, 46);
+            this.gbxTipo.Size = new System.Drawing.Size(359, 46);
             this.gbxTipo.TabIndex = 12;
             this.gbxTipo.TabStop = false;
             this.gbxTipo.Text = "Tipo";
             // 
             // cboColorFavorito
             // 
+            this.cboColorFavorito.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cboColorFavorito.FormattingEnabled = true;
-            this.cboColorFavorito.Location = new System.Drawing.Point(157, 219);
+            this.cboColorFavorito.Location = new System.Drawing.Point(157, 214);
             this.cboColorFavorito.Name = "cboColorFavorito";
-            this.cboColorFavorito.Size = new System.Drawing.Size(201, 21);
+            this.cboColorFavorito.Size = new System.Drawing.Size(213, 21);
             this.cboColorFavorito.TabIndex = 13;
             // 
             // lblColor
             // 
+            this.lblColor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblColor.AutoSize = true;
-            this.lblColor.Location = new System.Drawing.Point(62, 222);
+            this.lblColor.Location = new System.Drawing.Point(72, 222);
             this.lblColor.Name = "lblColor";
             this.lblColor.Size = new System.Drawing.Size(72, 13);
             this.lblColor.TabIndex = 14;
@@ -184,15 +202,19 @@
             // 
             // numFavorito
             // 
-            this.numFavorito.Location = new System.Drawing.Point(157, 246);
+            this.numFavorito.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.numFavorito.Location = new System.Drawing.Point(157, 245);
             this.numFavorito.Name = "numFavorito";
-            this.numFavorito.Size = new System.Drawing.Size(120, 20);
+            this.numFavorito.Size = new System.Drawing.Size(213, 20);
             this.numFavorito.TabIndex = 15;
             // 
             // lblNumero
             // 
+            this.lblNumero.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(69, 245);
+            this.lblNumero.Location = new System.Drawing.Point(79, 245);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(65, 13);
             this.lblNumero.TabIndex = 16;
@@ -212,7 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 458);
+            this.ClientSize = new System.Drawing.Size(507, 482);
             this.Controls.Add(this.btnVerPerfil);
             this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.numFavorito);
@@ -227,7 +249,11 @@
             this.Controls.Add(this.elementos);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximumSize = new System.Drawing.Size(724, 690);
+            this.MinimumSize = new System.Drawing.Size(523, 521);
             this.Name = "Form1";
+            this.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gbxTipo.ResumeLayout(false);
