@@ -63,7 +63,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(64, 414);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 1;
+            this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -76,7 +76,7 @@
             this.elementos.Location = new System.Drawing.Point(113, 311);
             this.elementos.Name = "elementos";
             this.elementos.Size = new System.Drawing.Size(241, 97);
-            this.elementos.TabIndex = 2;
+            this.elementos.TabIndex = 7;
             this.elementos.UseCompatibleStateImageBehavior = false;
             this.elementos.View = System.Windows.Forms.View.List;
             // 
@@ -111,7 +111,7 @@
             this.dtpFechaDeNacimiento.Location = new System.Drawing.Point(157, 95);
             this.dtpFechaDeNacimiento.Name = "dtpFechaDeNacimiento";
             this.dtpFechaDeNacimiento.Size = new System.Drawing.Size(213, 20);
-            this.dtpFechaDeNacimiento.TabIndex = 6;
+            this.dtpFechaDeNacimiento.TabIndex = 1;
             // 
             // chbChocolate
             // 
@@ -120,7 +120,7 @@
             this.chbChocolate.Location = new System.Drawing.Point(182, 129);
             this.chbChocolate.Name = "chbChocolate";
             this.chbChocolate.Size = new System.Drawing.Size(135, 17);
-            this.chbChocolate.TabIndex = 7;
+            this.chbChocolate.TabIndex = 2;
             this.chbChocolate.Text = "Te gusta el chocolate?";
             this.chbChocolate.UseVisualStyleBackColor = true;
             // 
@@ -128,7 +128,7 @@
             // 
             this.lblPerfil.AutoSize = true;
             this.lblPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPerfil.Location = new System.Drawing.Point(151, 0);
+            this.lblPerfil.Location = new System.Drawing.Point(152, 0);
             this.lblPerfil.Name = "lblPerfil";
             this.lblPerfil.Size = new System.Drawing.Size(184, 31);
             this.lblPerfil.TabIndex = 8;
@@ -141,7 +141,7 @@
             this.rbtnWizard.Location = new System.Drawing.Point(34, 19);
             this.rbtnWizard.Name = "rbtnWizard";
             this.rbtnWizard.Size = new System.Drawing.Size(58, 17);
-            this.rbtnWizard.TabIndex = 9;
+            this.rbtnWizard.TabIndex = 0;
             this.rbtnWizard.TabStop = true;
             this.rbtnWizard.Text = "Wizard";
             this.rbtnWizard.UseVisualStyleBackColor = true;
@@ -175,7 +175,7 @@
             this.gbxTipo.Location = new System.Drawing.Point(70, 152);
             this.gbxTipo.Name = "gbxTipo";
             this.gbxTipo.Size = new System.Drawing.Size(359, 46);
-            this.gbxTipo.TabIndex = 12;
+            this.gbxTipo.TabIndex = 3;
             this.gbxTipo.TabStop = false;
             this.gbxTipo.Text = "Tipo";
             // 
@@ -187,7 +187,7 @@
             this.cboColorFavorito.Location = new System.Drawing.Point(157, 214);
             this.cboColorFavorito.Name = "cboColorFavorito";
             this.cboColorFavorito.Size = new System.Drawing.Size(213, 21);
-            this.cboColorFavorito.TabIndex = 13;
+            this.cboColorFavorito.TabIndex = 4;
             // 
             // lblColor
             // 
@@ -207,7 +207,7 @@
             this.numFavorito.Location = new System.Drawing.Point(157, 245);
             this.numFavorito.Name = "numFavorito";
             this.numFavorito.Size = new System.Drawing.Size(213, 20);
-            this.numFavorito.TabIndex = 15;
+            this.numFavorito.TabIndex = 5;
             // 
             // lblNumero
             // 
@@ -225,7 +225,7 @@
             this.btnVerPerfil.Location = new System.Drawing.Point(67, 282);
             this.btnVerPerfil.Name = "btnVerPerfil";
             this.btnVerPerfil.Size = new System.Drawing.Size(75, 23);
-            this.btnVerPerfil.TabIndex = 17;
+            this.btnVerPerfil.TabIndex = 6;
             this.btnVerPerfil.Text = "Ver Perfil";
             this.btnVerPerfil.UseVisualStyleBackColor = true;
             this.btnVerPerfil.Click += new System.EventHandler(this.btnVerPerfil_Click);
