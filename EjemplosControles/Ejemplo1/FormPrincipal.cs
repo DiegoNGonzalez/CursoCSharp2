@@ -23,7 +23,7 @@ namespace Ejemplo1
             {
                 if(form.GetType() == typeof(Form1))
                 {
-                    MessageBox.Show("Ya existe una ventana abierta de este tipo, termine la carga de datos.");
+                    MessageBox.Show("Ya existe una ventana abierta de este tipo, termine la carga de datos.  ");
                     return;
                 }
             } 
