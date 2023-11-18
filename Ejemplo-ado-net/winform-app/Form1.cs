@@ -12,6 +12,7 @@ namespace winform_app
 {
     public partial class Form1 : Form
     {
+        private List<Pokemon> ListaPokemon;
         public Form1()
         {
             InitializeComponent();
@@ -19,7 +20,28 @@ namespace winform_app
         private void Form1_Load(object sender, EventArgs e)
         {
             PokemonNegocio negocio = new PokemonNegocio();
-            dgvPokemon.DataSource = negocio.Listar();
+            ListaPokemon = negocio.Listar();
+            dgvPokemon.DataSource = ListaPokemon;
+            CargarImagen(ListaPokemon[0].ImgUrl);
+        }
+
+        private void dgvPokemon_SelectionChanged(object sender, EventArgs e)
+        {
+           Pokemon Seleccionado= (Pokemon)dgvPokemon.CurrentRow.DataBoundItem;
+            CargarImagen(Seleccionado.ImgUrl);
+        }
+        private void CargarImagen(string imagen)
+        {
+            try
+            {
+                picBoxPokemon.Load(imagen);
+
+            }
+            catch (Exception ex)
+            {
+
+                picBoxPokemon.Load("https://www.pngkey.com/png/detail/233-2332677_ega-png.png");
+            } 
         }
     }
 }
