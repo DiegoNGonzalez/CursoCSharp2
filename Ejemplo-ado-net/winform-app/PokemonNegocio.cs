@@ -19,7 +19,7 @@ namespace winform_app
             {
                 conexcion.ConnectionString = "server=.\\SQLEXPRESS; database=POKEDEX_DB; integrated security=true; ";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT Numero,Nombre,Descripcion,UrlImagen FROM POKEMONS;";
+                comando.CommandText = "SELECT Numero,Nombre,p.Descripcion, UrlImagen, E.Tipo, D.Tipo Debilidad from POKEMONS P, ELEMENTOS E, ELEMENTOS D WHERE IdTipo=E.Id and D.id=p.IdDebilidad";
                 comando.Connection = conexcion;
                 conexcion.Open();
                 lector=comando.ExecuteReader();
@@ -31,6 +31,10 @@ namespace winform_app
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
                     aux.ImgUrl = (string)lector["UrlImagen"];
+                    aux.Tipo = new Elemento();
+                    aux.Tipo.Descripcion = (string)lector["Tipo"];
+                    aux.Debilidad= new Elemento();
+                    aux.Debilidad.Descripcion = (string)lector["Debilidad"];
 
                     list.Add(aux); 
                 }

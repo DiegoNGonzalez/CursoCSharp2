@@ -22,6 +22,7 @@ namespace winform_app
             PokemonNegocio negocio = new PokemonNegocio();
             ListaPokemon = negocio.Listar();
             dgvPokemon.DataSource = ListaPokemon;
+            dgvPokemon.Columns["ImgUrl"].Visible = false;
             CargarImagen(ListaPokemon[0].ImgUrl);
         }
 
