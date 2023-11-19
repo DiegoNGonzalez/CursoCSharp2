@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Dominio;
 
-namespace winform_app
+
+namespace Negocio
 {
-    internal class PokemonNegocio
+    public class PokemonNegocio
     {
         public List<Pokemon> Listar() {
             List<Pokemon> list = new List<Pokemon>();
