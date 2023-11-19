@@ -16,6 +16,7 @@ namespace winform_app
     public partial class Form1 : Form
     {
         private List<Pokemon> ListaPokemon;
+        private List<Elemento> ListaElemento;
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +28,10 @@ namespace winform_app
             dgvPokemon.DataSource = ListaPokemon;
             dgvPokemon.Columns["ImgUrl"].Visible = false;
             CargarImagen(ListaPokemon[0].ImgUrl);
+            ElementoNegocio elementoNegocio = new ElementoNegocio();
+            ListaElemento = elementoNegocio.Listar();
+            dgvElementos.DataSource = ListaElemento;
+
         }
 
         private void dgvPokemon_SelectionChanged(object sender, EventArgs e)
