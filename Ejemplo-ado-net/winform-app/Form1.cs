@@ -24,11 +24,19 @@ namespace winform_app
         private void Form1_Load(object sender, EventArgs e)
         {
             PokemonNegocio negocio = new PokemonNegocio();
-            ListaPokemon = negocio.Listar();
-            dgvPokemon.DataSource = ListaPokemon;
-            dgvPokemon.Columns["ImgUrl"].Visible = false;
-            CargarImagen(ListaPokemon[0].ImgUrl);
-            
+
+            try
+            {
+                ListaPokemon = negocio.Listar();
+                dgvPokemon.DataSource = ListaPokemon;
+                dgvPokemon.Columns["ImgUrl"].Visible = false;
+                CargarImagen(ListaPokemon[0].ImgUrl);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
 
         }
 

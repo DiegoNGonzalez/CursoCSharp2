@@ -26,7 +26,12 @@ namespace Negocio
                     aux.Numero = datos.Lector.GetInt32(0);
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
-                    aux.ImgUrl = (string)datos.Lector["UrlImagen"];
+
+                    //if (!(datos.Lector.IsDBNull(datos.Lector.GetOrdinal("UrlImagen"))))
+                    //    aux.ImgUrl = (string)datos.Lector["UrlImagen"];
+                    //if (!(datos.Lector["UrlImagen"]is DBNull))
+                        aux.ImgUrl = (string)datos.Lector["UrlImagen"];
+
                     aux.Tipo = new Elemento();
                     aux.Tipo.Descripcion = (string)datos.Lector["Tipo"];
                     aux.Debilidad= new Elemento();
