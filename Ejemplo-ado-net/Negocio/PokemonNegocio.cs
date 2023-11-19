@@ -51,7 +51,9 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("insert into POKEMONS (Numero,Nombre,Descripcion,UrlImagen, Activo) values("+nuevo.Numero+",'"+nuevo.Nombre+"','"+nuevo.Descripcion+"','"+nuevo.ImgUrl+"',1)");
+                datos.SetearConsulta("insert into POKEMONS (Numero,Nombre,Descripcion,UrlImagen,Activo,IdTipo,IdDebilidad ) values(" + nuevo.Numero+",'"+nuevo.Nombre+"','"+nuevo.Descripcion+"','"+nuevo.ImgUrl+"',1,@idTipo,@idDebilidad)");
+                datos.SetearParametro("@idTipo", nuevo.Tipo.Id);
+                datos.SetearParametro("@idDebilidad", nuevo.Debilidad.Id);
                 datos.EjecutarAccion();
 
             }

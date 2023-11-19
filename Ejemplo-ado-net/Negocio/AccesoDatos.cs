@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Dominio;
 
 namespace Negocio
 {
@@ -55,6 +56,10 @@ namespace Negocio
 
                 throw ex;
             }
+        }
+        public void SetearParametro(string Nombre, object Valor)
+        {
+            comando.Parameters.AddWithValue(Nombre,Valor);
         }
         public void CerrarConexion()
         {
