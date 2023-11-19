@@ -30,10 +30,9 @@
         {
             this.dgvPokemon = new System.Windows.Forms.DataGridView();
             this.picBoxPokemon = new System.Windows.Forms.PictureBox();
-            this.dgvElementos = new System.Windows.Forms.DataGridView();
+            this.btnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPokemon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvElementos)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPokemon
@@ -54,20 +53,22 @@
             this.picBoxPokemon.TabIndex = 1;
             this.picBoxPokemon.TabStop = false;
             // 
-            // dgvElementos
+            // btnAgregar
             // 
-            this.dgvElementos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvElementos.Location = new System.Drawing.Point(0, 287);
-            this.dgvElementos.Name = "dgvElementos";
-            this.dgvElementos.Size = new System.Drawing.Size(470, 167);
-            this.dgvElementos.TabIndex = 2;
+            this.btnAgregar.Location = new System.Drawing.Point(12, 282);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 39);
+            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.Text = "Agregar Pokemon";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(935, 548);
-            this.Controls.Add(this.dgvElementos);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.picBoxPokemon);
             this.Controls.Add(this.dgvPokemon);
             this.Name = "Form1";
@@ -75,7 +76,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPokemon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvElementos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -84,7 +84,7 @@
 
         private System.Windows.Forms.DataGridView dgvPokemon;
         private System.Windows.Forms.PictureBox picBoxPokemon;
-        private System.Windows.Forms.DataGridView dgvElementos;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }
 

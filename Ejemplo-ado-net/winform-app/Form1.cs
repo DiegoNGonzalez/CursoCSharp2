@@ -16,7 +16,7 @@ namespace winform_app
     public partial class Form1 : Form
     {
         private List<Pokemon> ListaPokemon;
-        private List<Elemento> ListaElemento;
+       
         public Form1()
         {
             InitializeComponent();
@@ -28,9 +28,7 @@ namespace winform_app
             dgvPokemon.DataSource = ListaPokemon;
             dgvPokemon.Columns["ImgUrl"].Visible = false;
             CargarImagen(ListaPokemon[0].ImgUrl);
-            ElementoNegocio elementoNegocio = new ElementoNegocio();
-            ListaElemento = elementoNegocio.Listar();
-            dgvElementos.DataSource = ListaElemento;
+            
 
         }
 
@@ -51,6 +49,12 @@ namespace winform_app
 
                 picBoxPokemon.Load("https://www.pngkey.com/png/detail/233-2332677_ega-png.png");
             } 
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AgregarPokemon alta = new AgregarPokemon();
+            alta.ShowDialog();
         }
     }
 }
