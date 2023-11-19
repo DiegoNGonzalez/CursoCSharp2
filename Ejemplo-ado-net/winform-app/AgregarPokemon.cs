@@ -29,6 +29,8 @@ namespace winform_app
                 aux.Nombre= txtNombre.Text;
                 aux.Descripcion = txtDescripcion.Text;
                 aux.ImgUrl=txtUrlImg.Text;
+                aux.Tipo = (Elemento)cBoxTipo.SelectedItem;
+                aux.Debilidad=(Elemento)cBoxDebilidad.SelectedItem;
                 negocio.Agregar(aux);
                 MessageBox.Show("Agregado con exito");
                 Close();
@@ -43,6 +45,22 @@ namespace winform_app
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AgregarPokemon_Load(object sender, EventArgs e)
+        {
+            ElementoNegocio elementoNegocio = new ElementoNegocio();
+            try
+            {
+                cBoxTipo.DataSource = elementoNegocio.Listar();
+                cBoxDebilidad.DataSource = elementoNegocio.Listar(); 
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
