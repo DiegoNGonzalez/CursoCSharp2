@@ -13,30 +13,24 @@ namespace Negocio
     {
         public List<Pokemon> Listar() {
             List<Pokemon> list = new List<Pokemon>();
-            SqlConnection conexcion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            SqlDataReader lector;
+            AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                conexcion.ConnectionString = "server=.\\SQLEXPRESS; database=POKEDEX_DB; integrated security=true; ";
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT Numero,Nombre,p.Descripcion, UrlImagen, E.Tipo, D.Tipo Debilidad from POKEMONS P, ELEMENTOS E, ELEMENTOS D WHERE IdTipo=E.Id and D.id=p.IdDebilidad";
-                comando.Connection = conexcion;
-                conexcion.Open();
-                lector=comando.ExecuteReader();
+                datos.SetearConsulta ("SELECT Numero,Nombre,p.Descripcion, UrlImagen, E.Tipo, D.Tipo Debilidad from POKEMONS P, ELEMENTOS E, ELEMENTOS D WHERE IdTipo=E.Id and D.id=p.IdDebilidad");
+                datos.EjecutarLectura();
 
-                while (lector.Read())
+                while (datos.Lector.Read())
                 {
                     Pokemon aux= new Pokemon();
-                    aux.Numero = lector.GetInt32(0);
-                    aux.Nombre = (string)lector["Nombre"];
-                    aux.Descripcion = (string)lector["Descripcion"];
-                    aux.ImgUrl = (string)lector["UrlImagen"];
+                    aux.Numero = datos.Lector.GetInt32(0);
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.ImgUrl = (string)datos.Lector["UrlImagen"];
                     aux.Tipo = new Elemento();
-                    aux.Tipo.Descripcion = (string)lector["Tipo"];
+                    aux.Tipo.Descripcion = (string)datos.Lector["Tipo"];
                     aux.Debilidad= new Elemento();
-                    aux.Debilidad.Descripcion = (string)lector["Debilidad"];
+                    aux.Debilidad.Descripcion = (string)datos.Lector["Debilidad"];
 
                     list.Add(aux); 
                 }
@@ -48,7 +42,7 @@ namespace Negocio
 
                 throw ex;
             }
-            finally { conexcion.Close(); }
+            finally { datos.CerrarConexion(); }
 
 
         }
