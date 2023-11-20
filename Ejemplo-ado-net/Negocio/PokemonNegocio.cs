@@ -21,7 +21,7 @@ namespace Negocio
 
             try
             {
-                datos.SetearConsulta ("SELECT Numero,Nombre,p.Descripcion, UrlImagen, E.Tipo, D.Tipo Debilidad, P.IdTipo, P.IdDebilidad, P.Id from POKEMONS P, ELEMENTOS E, ELEMENTOS D WHERE IdTipo=E.Id and D.id=p.IdDebilidad");
+                datos.SetearConsulta ("SELECT Numero,Nombre,p.Descripcion, UrlImagen, E.Tipo, D.Tipo Debilidad, P.IdTipo, P.IdDebilidad, P.Id, Activo from POKEMONS P, ELEMENTOS E, ELEMENTOS D WHERE IdTipo=E.Id and D.id=p.IdDebilidad");
                 datos.EjecutarLectura();
 
                 while (datos.Lector.Read())
@@ -35,7 +35,7 @@ namespace Negocio
                     //if (!(datos.Lector.IsDBNull(datos.Lector.GetOrdinal("UrlImagen"))))
                     //    aux.ImgUrl = (string)datos.Lector["UrlImagen"];
                     //if (!(datos.Lector["UrlImagen"]is DBNull))
-                        aux.ImgUrl = (string)datos.Lector["UrlImagen"];
+                    aux.ImgUrl = (string)datos.Lector["UrlImagen"];
 
                     aux.Tipo = new Elemento();
                     aux.Tipo.Id = (int)datos.Lector["IdTipo"];
@@ -43,8 +43,12 @@ namespace Negocio
                     aux.Debilidad= new Elemento();
                     aux.Debilidad.Id = (int)datos.Lector["IdDebilidad"];
                     aux.Debilidad.Descripcion = (string)datos.Lector["Debilidad"];
+                    aux.Estado = (bool)datos.Lector["Activo"];
+                    if (aux.Estado)
+                    {
+                        list.Add(aux); 
 
-                    list.Add(aux); 
+                    }
                 }
                
                 return list;
@@ -112,6 +116,22 @@ namespace Negocio
                 throw ex;
             }
             finally{  datos.CerrarConexion();}
+        }
+        public void EliminarLogico(int id)
+        {
+            try
+            {
+                datos.SetearConsulta("UPDATE POKEMONS set Activo=0 WHERE id=@id");
+                datos.SetearParametro("id", id);
+                datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { datos.CerrarConexion(); }
         }
     }
 }
