@@ -14,9 +14,16 @@ namespace winform_app
 {
     public partial class AgregarPokemon : Form
     {
+        private Pokemon pokemon=null;
         public AgregarPokemon()
         {
             InitializeComponent();
+        }
+        public AgregarPokemon(Pokemon pokemon)
+        {
+            InitializeComponent();
+            this.pokemon = pokemon;
+            Text = "Modificar Pokemon";
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -25,14 +32,29 @@ namespace winform_app
             PokemonNegocio negocio= new PokemonNegocio();
             try
             {
-                aux.Numero = int.Parse(txtNumero.Text);
-                aux.Nombre= txtNombre.Text;
-                aux.Descripcion = txtDescripcion.Text;
-                aux.ImgUrl=txtUrlImg.Text;
-                aux.Tipo = (Elemento)cBoxTipo.SelectedItem;
-                aux.Debilidad=(Elemento)cBoxDebilidad.SelectedItem;
-                negocio.Agregar(aux);
-                MessageBox.Show("Agregado con exito");
+                if (pokemon==null)
+                    pokemon = new Pokemon();
+                
+                pokemon.Numero = int.Parse(txtNumero.Text);
+                pokemon.Nombre= txtNombre.Text;
+                pokemon.Descripcion = txtDescripcion.Text;
+                pokemon.ImgUrl=txtUrlImg.Text;
+                pokemon.Tipo = (Elemento)cBoxTipo.SelectedItem;
+                pokemon.Debilidad=(Elemento)cBoxDebilidad.SelectedItem;
+
+                if(pokemon.Id != 0)
+                {
+                    negocio.Modificar(pokemon);
+                    MessageBox.Show("Modificado exitosamente");
+                }
+                else
+                {
+                    negocio.Agregar(pokemon);
+                    MessageBox.Show("Agregado con exito");
+
+                }
+
+
                 Close();
             }
             catch (Exception ex)
@@ -53,7 +75,24 @@ namespace winform_app
             try
             {
                 cBoxTipo.DataSource = elementoNegocio.Listar();
-                cBoxDebilidad.DataSource = elementoNegocio.Listar(); 
+                cBoxTipo.ValueMember = "Id";
+                cBoxTipo.DisplayMember= "Descripcion";
+                cBoxDebilidad.DataSource = elementoNegocio.Listar();
+                cBoxDebilidad.ValueMember = "Id";
+                cBoxDebilidad.DisplayMember = "Descripcion";
+                
+
+                if(pokemon!=null)
+                {
+                    txtNumero.Text = pokemon.Numero.ToString();
+                    txtNombre.Text = pokemon.Nombre;
+                    txtDescripcion.Text= pokemon.Descripcion;
+                    CargarImagen(pokemon.ImgUrl);
+                    txtUrlImg.Text = pokemon.ImgUrl;
+                    cBoxTipo.SelectedValue = pokemon.Tipo.Id;
+                    cBoxDebilidad.SelectedValue = pokemon.Debilidad.Id;
+
+                }
 
             }
             catch (Exception ex)
