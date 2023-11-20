@@ -142,23 +142,6 @@ namespace winform_app
 
         private void btnFiltro_Click(object sender, EventArgs e)
         {
-            List<Pokemon> listaFiltrada;
-            string filtro= txtFiltro.Text;
-            if (filtro != "")
-            {
-
-            listaFiltrada = ListaPokemon.FindAll(poke=> poke.Nombre.ToUpper().Contains(filtro.ToUpper())||poke.Tipo.Descripcion.ToUpper().Contains(filtro.ToUpper()));
-            }
-            else
-            {
-                listaFiltrada = ListaPokemon;
-            }
-
-            dgvPokemon.DataSource = null;
-            dgvPokemon.DataSource = listaFiltrada;
-            dgvPokemon.Columns["Id"].Visible = false;
-            dgvPokemon.Columns["ImgUrl"].Visible = false;
-            dgvPokemon.Columns["Estado"].Visible = false;
            // CargarImagen(listaFiltrada[0].ImgUrl);
 
         }
@@ -173,6 +156,33 @@ namespace winform_app
             dgvPokemon.Columns["Estado"].Visible = false;
             //CargarImagen(ListaPokemon[0].ImgUrl);
 
+        }
+
+        private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+           
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<Pokemon> listaFiltrada;
+            string filtro = txtFiltro.Text;
+            if (filtro.Length > 2)
+            {
+
+                listaFiltrada = ListaPokemon.FindAll(poke => poke.Nombre.ToUpper().Contains(filtro.ToUpper()) || poke.Tipo.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltrada = ListaPokemon;
+            }
+
+            dgvPokemon.DataSource = null;
+            dgvPokemon.DataSource = listaFiltrada;
+            dgvPokemon.Columns["Id"].Visible = false;
+            dgvPokemon.Columns["ImgUrl"].Visible = false;
+            dgvPokemon.Columns["Estado"].Visible = false;
         }
     }
 }
