@@ -13,15 +13,20 @@ using Negocio;
 
 namespace winform_app
 {
-    public partial class Form1 : Form
+    public partial class formPokedex : Form
     {
         private List<Pokemon> ListaPokemon;
        
-        public Form1()
+        public formPokedex()
         {
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
+        {
+            CargarGrid();
+
+        }
+        private void CargarGrid()
         {
             PokemonNegocio negocio = new PokemonNegocio();
 
@@ -37,7 +42,6 @@ namespace winform_app
 
                 MessageBox.Show(ex.ToString());
             }
-
         }
 
         private void dgvPokemon_SelectionChanged(object sender, EventArgs e)
@@ -63,6 +67,8 @@ namespace winform_app
         {
             AgregarPokemon alta = new AgregarPokemon();
             alta.ShowDialog();
+            CargarGrid();
+
         }
     }
 }

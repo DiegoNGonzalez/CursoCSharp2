@@ -1,6 +1,6 @@
 ﻿namespace winform_app
 {
-    partial class Form1
+    partial class formPokedex
     {
         /// <summary>
         /// Required designer variable.
@@ -37,9 +37,14 @@
             // 
             // dgvPokemon
             // 
+            this.dgvPokemon.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvPokemon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPokemon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvPokemon.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvPokemon.Location = new System.Drawing.Point(0, 0);
+            this.dgvPokemon.MultiSelect = false;
             this.dgvPokemon.Name = "dgvPokemon";
+            this.dgvPokemon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPokemon.Size = new System.Drawing.Size(580, 257);
             this.dgvPokemon.TabIndex = 0;
             this.dgvPokemon.SelectionChanged += new System.EventHandler(this.dgvPokemon_SelectionChanged);
@@ -63,7 +68,7 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // Form1
+            // formPokedex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -71,8 +76,8 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.picBoxPokemon);
             this.Controls.Add(this.dgvPokemon);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "formPokedex";
+            this.Text = "Pokedex";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPokemon)).EndInit();
