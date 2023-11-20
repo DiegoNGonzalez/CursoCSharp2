@@ -62,5 +62,22 @@ namespace winform_app
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void txtUrlImg_Leave(object sender, EventArgs e)
+        {
+           CargarImagen(txtUrlImg.Text);
+        }
+        private void CargarImagen(string imagen)
+        {
+            try
+            {
+                picBoxPokemon.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+
+                picBoxPokemon.Load("https://www.pngkey.com/png/detail/233-2332677_ega-png.png");
+            }
+        }
     }
 }

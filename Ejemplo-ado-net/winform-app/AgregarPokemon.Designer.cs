@@ -42,6 +42,8 @@
             this.cBoxDebilidad = new System.Windows.Forms.ComboBox();
             this.lblTipo = new System.Windows.Forms.Label();
             this.llblDebilidad = new System.Windows.Forms.Label();
+            this.picBoxPokemon = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPokemon)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNumero
@@ -76,9 +78,9 @@
             this.lblUrlImg.AutoSize = true;
             this.lblUrlImg.Location = new System.Drawing.Point(44, 190);
             this.lblUrlImg.Name = "lblUrlImg";
-            this.lblUrlImg.Size = new System.Drawing.Size(58, 13);
+            this.lblUrlImg.Size = new System.Drawing.Size(61, 13);
             this.lblUrlImg.TabIndex = 4;
-            this.lblUrlImg.Text = "UrlImagen:";
+            this.lblUrlImg.Text = "Url Imagen:";
             // 
             // txtNumero
             // 
@@ -107,6 +109,7 @@
             this.txtUrlImg.Name = "txtUrlImg";
             this.txtUrlImg.Size = new System.Drawing.Size(100, 20);
             this.txtUrlImg.TabIndex = 8;
+            this.txtUrlImg.Leave += new System.EventHandler(this.txtUrlImg_Leave);
             // 
             // btnAgregar
             // 
@@ -164,11 +167,21 @@
             this.llblDebilidad.TabIndex = 14;
             this.llblDebilidad.Text = "Debilidad:";
             // 
+            // picBoxPokemon
+            // 
+            this.picBoxPokemon.Location = new System.Drawing.Point(263, 56);
+            this.picBoxPokemon.Name = "picBoxPokemon";
+            this.picBoxPokemon.Size = new System.Drawing.Size(285, 231);
+            this.picBoxPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxPokemon.TabIndex = 15;
+            this.picBoxPokemon.TabStop = false;
+            // 
             // AgregarPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 450);
+            this.ClientSize = new System.Drawing.Size(585, 368);
+            this.Controls.Add(this.picBoxPokemon);
             this.Controls.Add(this.llblDebilidad);
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.cBoxDebilidad);
@@ -186,6 +199,7 @@
             this.Name = "AgregarPokemon";
             this.Text = "AgregarPokemon";
             this.Load += new System.EventHandler(this.AgregarPokemon_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPokemon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +221,6 @@
         private System.Windows.Forms.ComboBox cBoxDebilidad;
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.Label llblDebilidad;
+        private System.Windows.Forms.PictureBox picBoxPokemon;
     }
 }
