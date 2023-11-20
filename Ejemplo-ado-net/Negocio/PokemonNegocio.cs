@@ -11,9 +11,13 @@ namespace Negocio
 {
     public class PokemonNegocio
     {
+        private AccesoDatos datos;
+        public PokemonNegocio()
+        {
+            datos = new AccesoDatos();
+        }
         public List<Pokemon> Listar() {
             List<Pokemon> list = new List<Pokemon>();
-            AccesoDatos datos = new AccesoDatos();
 
             try
             {
@@ -56,7 +60,6 @@ namespace Negocio
         }
         public void Agregar(Pokemon nuevo)
         {
-            AccesoDatos datos = new AccesoDatos();
             try
             {
                 datos.SetearConsulta("insert into POKEMONS (Numero,Nombre,Descripcion,UrlImagen,Activo,IdTipo,IdDebilidad ) values(" + nuevo.Numero+",'"+nuevo.Nombre+"','"+nuevo.Descripcion+"','"+nuevo.ImgUrl+"',1,@idTipo,@idDebilidad)");
@@ -75,7 +78,6 @@ namespace Negocio
 
         public void Modificar(Pokemon modificado) 
         { 
-            AccesoDatos datos= new AccesoDatos();
             try
             {
                 datos.SetearConsulta("UPDATE POKEMONS set Numero=@numero, Nombre=@nombre,Descripcion=@descripcion, UrlImagen=@urlImagen,IdTipo=@idTipo,IdDebilidad=@idDebilidad WHERE id=@Id");
@@ -95,6 +97,21 @@ namespace Negocio
                 throw ex;
             }
             finally { datos.CerrarConexion(); }
+        }
+        public void Eliminar(int id)
+        {
+            try
+            {
+                datos.SetearConsulta("delete from POKEMONS where id=@id");
+                datos.SetearParametro("@id", id);
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally{  datos.CerrarConexion();}
         }
     }
 }
