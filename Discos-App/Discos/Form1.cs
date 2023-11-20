@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
+using Negocio;
 
 
 namespace Discos
@@ -21,12 +23,26 @@ namespace Discos
 
         private void Discos_DB_Load(object sender, EventArgs e)
         {
+            CargarGrid();
+        }
+        private void CargarGrid()
+        {
             DiscoNegocio negocio = new DiscoNegocio();
 
-            listaDiscos = negocio.Listar();
-            dgvDiscos.DataSource = listaDiscos;
-             dgvDiscos.Columns["UrlImgTapa"].Visible = false;
-            CargarImagen(listaDiscos[0].UrlImgTapa);
+            try
+            {
+                listaDiscos = negocio.Listar();
+                dgvDiscos.DataSource = listaDiscos;
+                dgvDiscos.Columns["UrlImgTapa"].Visible = false;
+                CargarImagen(listaDiscos[0].UrlImgTapa);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+            
         }
         private void CargarImagen(string imagen)
         {
@@ -45,6 +61,13 @@ namespace Discos
         {
             Disco seleccionado = (Disco)dgvDiscos.CurrentRow.DataBoundItem;
             CargarImagen(seleccionado.UrlImgTapa);
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            FormAgregarDisco alta = new FormAgregarDisco();
+            alta.ShowDialog();
+            CargarGrid();
         }
     }
 }
