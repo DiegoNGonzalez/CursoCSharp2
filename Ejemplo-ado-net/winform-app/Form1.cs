@@ -24,6 +24,10 @@ namespace winform_app
         private void Form1_Load(object sender, EventArgs e)
         {
             CargarGrid();
+            cBoxCampo.Items.Add("Numero");
+            cBoxCampo.Items.Add("Nombre");
+            cBoxCampo.Items.Add("Descripción");
+
 
         }
         private void CargarGrid()
@@ -142,7 +146,20 @@ namespace winform_app
 
         private void btnFiltro_Click(object sender, EventArgs e)
         {
-           // CargarImagen(listaFiltrada[0].ImgUrl);
+            PokemonNegocio negocio = new PokemonNegocio();
+            try
+            {
+                string campo=cBoxCampo.SelectedItem.ToString();
+                string criterio= cBoxCriterio.SelectedItem.ToString();
+                string filtro = txtFiltroAvanzado.Text;
+                dgvPokemon.DataSource= negocio.Filtrar(campo,criterio,filtro);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
 
         }
 
@@ -158,11 +175,6 @@ namespace winform_app
 
         }
 
-        private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-           
-        }
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
@@ -183,6 +195,25 @@ namespace winform_app
             dgvPokemon.Columns["Id"].Visible = false;
             dgvPokemon.Columns["ImgUrl"].Visible = false;
             dgvPokemon.Columns["Estado"].Visible = false;
+        }
+
+        private void cBoxCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cBoxCampo.SelectedItem.ToString();
+            if (opcion == "Numero")
+            {
+                cBoxCriterio.Items.Clear();
+                cBoxCriterio.Items.Add("Mayor a ");
+                cBoxCriterio.Items.Add("Menor a ");
+                cBoxCriterio.Items.Add("Igual a ");
+            }
+            else
+            {
+                cBoxCriterio.Items.Clear();
+                cBoxCriterio.Items.Add("Comienza con ");
+                cBoxCriterio.Items.Add("Termina con ");
+                cBoxCriterio.Items.Add("Contiene ");
+            }
         }
     }
 }
