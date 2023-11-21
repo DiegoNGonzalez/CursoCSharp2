@@ -43,6 +43,7 @@
             this.lblTipo = new System.Windows.Forms.Label();
             this.llblDebilidad = new System.Windows.Forms.Label();
             this.picBoxPokemon = new System.Windows.Forms.PictureBox();
+            this.btnAgregarImg = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPokemon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,11 +177,22 @@
             this.picBoxPokemon.TabIndex = 15;
             this.picBoxPokemon.TabStop = false;
             // 
+            // btnAgregarImg
+            // 
+            this.btnAgregarImg.Location = new System.Drawing.Point(221, 185);
+            this.btnAgregarImg.Name = "btnAgregarImg";
+            this.btnAgregarImg.Size = new System.Drawing.Size(28, 23);
+            this.btnAgregarImg.TabIndex = 16;
+            this.btnAgregarImg.Text = "+";
+            this.btnAgregarImg.UseVisualStyleBackColor = true;
+            this.btnAgregarImg.Click += new System.EventHandler(this.btnAgregarImg_Click);
+            // 
             // AgregarPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(585, 368);
+            this.Controls.Add(this.btnAgregarImg);
             this.Controls.Add(this.picBoxPokemon);
             this.Controls.Add(this.llblDebilidad);
             this.Controls.Add(this.lblTipo);
@@ -222,5 +234,6 @@
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.Label llblDebilidad;
         private System.Windows.Forms.PictureBox picBoxPokemon;
+        private System.Windows.Forms.Button btnAgregarImg;
     }
 }

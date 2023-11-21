@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
+using System.Configuration;
 
 namespace winform_app
 {
     public partial class AgregarPokemon : Form
     {
         private Pokemon pokemon=null;
+        private OpenFileDialog archivo=null;
         public AgregarPokemon()
         {
             InitializeComponent();
@@ -53,7 +56,10 @@ namespace winform_app
                     MessageBox.Show("Agregado con exito");
 
                 }
-
+                //Guardo img si la levanto localmente
+                if (archivo != null&&  !(txtUrlImg.Text.ToUpper().Contains("HTTP")))
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["poke-app"] + archivo.SafeFileName);
+                
 
                 Close();
             }
@@ -116,6 +122,20 @@ namespace winform_app
             {
 
                 picBoxPokemon.Load("https://www.pngkey.com/png/detail/233-2332677_ega-png.png");
+            }
+        }
+
+        private void btnAgregarImg_Click(object sender, EventArgs e)
+        {
+            archivo= new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg|pgn|*.png";
+            if (archivo.ShowDialog() == DialogResult.OK) 
+            {
+                txtUrlImg.Text= archivo.FileName;
+                CargarImagen(archivo.FileName);
+                //guardo la imagen
+
+                //File.Copy(archivo.FileName, ConfigurationManager.AppSettings["poke-app"]+archivo.SafeFileName);
             }
         }
     }
