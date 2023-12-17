@@ -144,11 +144,51 @@ namespace winform_app
             }
         }
 
+        private bool ValidarFiltro()
+        {
+            if (cBoxCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor, seleccione el campo para filtrar.");
+                return true;
+            }
+            if(cBoxCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor seleccione el criterio para filtrar.");
+                return true;
+            }
+            if(cBoxCampo.SelectedIndex ==0 && txtFiltroAvanzado.Text == "")
+            {
+                MessageBox.Show("Por favor ingrese un numero para filtrar");
+                return true;
+            }
+            if (cBoxCampo.SelectedIndex == 0&& txtFiltroAvanzado.Text.Length>0)
+            {
+                if (!(SoloNumeros(txtFiltroAvanzado.Text)))
+                {
+                    MessageBox.Show("Solo puede ingresar numeros segun el campo y criterio elegido, reingrese el dato.");
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+        private bool SoloNumeros(string cadena)
+        {
+            foreach (char c in cadena)
+            {
+                if (!(char.IsNumber(c)))
+                    return false;
+            }
+            return true;
+        }
         private void btnFiltro_Click(object sender, EventArgs e)
         {
             PokemonNegocio negocio = new PokemonNegocio();
             try
             {
+                if (ValidarFiltro())
+                    return;
+
                 string campo=cBoxCampo.SelectedItem.ToString();
                 string criterio= cBoxCriterio.SelectedItem.ToString();
                 string filtro = txtFiltroAvanzado.Text;
